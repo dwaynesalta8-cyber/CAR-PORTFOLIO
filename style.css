@@ -1,0 +1,1007 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    padding: 25px 0;
+    border-bottom: 1px solid #333;
+    background: #0b0b0b;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+
+    background: #0b0b0b;
+    color: #ffffff;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ANIMATED WAVE BACKGROUND
+========================================================= */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 180%;
+    height: 55%;
+
+    left: -40%;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform-origin: center;
+}
+
+
+/* Main wave */
+
+.hero::before {
+    top: 35%;
+
+    animation: waveMove 12s ease-in-out infinite;
+
+    box-shadow:
+        0 -25px 0 rgba(255, 255, 255, 0.08),
+        0 -50px 0 rgba(255, 255, 255, 0.06),
+        0 -75px 0 rgba(255, 255, 255, 0.04),
+        0 -100px 0 rgba(255, 255, 255, 0.025),
+        0 -125px 0 rgba(255, 255, 255, 0.015);
+}
+
+
+/* Second wave */
+
+.hero::after {
+    top: 18%;
+
+    opacity: 0.6;
+
+    animation: waveMoveReverse 16s ease-in-out infinite;
+
+    box-shadow:
+        0 25px 0 rgba(255, 255, 255, 0.06),
+        0 50px 0 rgba(255, 255, 255, 0.04),
+        0 75px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* Wave animation */
+
+@keyframes waveMove {
+
+    0%,
+    100% {
+        transform: translateX(-5%) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateX(5%) rotate(-3deg);
+    }
+}
+
+
+@keyframes waveMoveReverse {
+
+    0%,
+    100% {
+        transform: translateX(5%) rotate(5deg);
+    }
+
+    50% {
+        transform: translateX(-5%) rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 120px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 35px;
+
+    color: #ffffff;
+}
+
+.hero h1 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 500px;
+
+    font-size: 18px;
+
+    color: #bdbdbd;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn,
+.btn-outline {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    font-size: 14px;
+
+    border: 1px solid #ffffff;
+
+    transition: 0.3s;
+}
+
+
+/* White button */
+
+.btn {
+    background: #ffffff;
+    color: #111111;
+}
+
+
+/* White button hover */
+
+.btn:hover {
+    background: transparent;
+    color: #ffffff;
+}
+
+
+/* Outline button */
+
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+}
+
+
+/* Outline button hover */
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+.image-placeholder {
+    width: 350px;
+    height: 450px;
+
+    background: #111111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    /* Black and white image */
+    filter: grayscale(100%);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    padding: 120px 0;
+}
+
+
+/* Section headings */
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-size: 55px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+/* =========================================================
+   WORK
+========================================================= */
+
+.work-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.work-card {
+    background: #151515;
+
+    color: #ffffff;
+
+    border: 1px solid #292929;
+}
+
+
+.work-card .image-placeholder {
+    width: 100%;
+    height: 550px;
+
+    overflow: hidden;
+
+    background: #111111;
+}
+
+
+.work-card .image-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    filter: grayscale(100%);
+}
+
+
+.work-info {
+    padding: 25px;
+}
+
+
+.work-info p {
+    font-size: 12px;
+
+    color: #999999;
+
+    margin-bottom: 5px;
+}
+
+
+.work-info h3 {
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+.work-info a {
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.about h2 {
+    font-size: 60px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.about-text {
+    max-width: 500px;
+}
+
+
+.about-text p {
+    color: #555555;
+
+    margin-bottom: 25px;
+
+    font-size: 18px;
+}
+
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    border-bottom: 1px solid #111111;
+
+    padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #333333;
+}
+
+
+.service-card {
+    padding: 40px 30px;
+
+    border-right: 1px solid #333333;
+
+    color: #ffffff;
+}
+
+
+.service-card:last-child {
+    border-right: none;
+}
+
+
+.service-card span {
+    font-size: 13px;
+
+    color: #999999;
+}
+
+
+.service-card h3 {
+    font-size: 28px;
+
+    margin: 50px 0 15px;
+}
+
+
+.service-card p {
+    color: #999999;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.notes {
+    background: #eeeeee;
+
+    color: #111111;
+}
+
+
+.notes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.note {
+    border-top: 1px solid #111111;
+
+    padding-top: 25px;
+}
+
+
+.note > p:first-child {
+    font-size: 12px;
+
+    color: #666666;
+}
+
+
+.note h3 {
+    font-size: 25px;
+
+    margin: 30px 0 15px;
+}
+
+
+.note p:last-child {
+    color: #666666;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: #0b0b0b;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.contact-content {
+    max-width: 800px;
+}
+
+
+.contact h2 {
+    font-size: clamp(50px, 8vw, 100px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.contact p:not(.small-title) {
+    color: #aaaaaa;
+
+    margin-bottom: 35px;
+}
+
+
+.contact .btn {
+    background: #ffffff;
+
+    color: #111111;
+
+    border-color: #ffffff;
+}
+
+
+.contact .btn:hover {
+    background: transparent;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #0b0b0b;
+
+    color: #ffffff;
+
+    border-top: 1px solid #333333;
+
+    padding: 30px 0;
+}
+
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.footer p {
+    font-size: 12px;
+
+    color: #888888;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+
+.footer-links a {
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* HEADER */
+
+    .nav {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+
+    nav {
+        width: 100%;
+
+        gap: 12px 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding: 35px 0 70px;
+    }
+
+
+    .hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 35px;
+
+        align-items: center;
+    }
+
+
+    /* IMAGE MOVES TO TOP */
+
+    .hero-image {
+        order: -1;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .image-placeholder {
+        width: 100%;
+
+        max-width: 350px;
+
+        height: 380px;
+    }
+
+
+    .image-placeholder img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+    }
+
+
+    /* TEXT */
+
+    .hero-text {
+        width: 100%;
+
+        text-align: left;
+    }
+
+
+    .small-title {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 70px);
+
+        line-height: 0.9;
+
+        letter-spacing: -4px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .hero-description {
+        max-width: 100%;
+
+        font-size: 17px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .hero-buttons {
+        display: flex;
+
+        flex-direction: row;
+
+        gap: 15px;
+    }
+
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-outline {
+        width: auto;
+    }
+
+
+    /* WORK */
+
+    .work-grid,
+    .services-grid,
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .work-card .image-placeholder {
+        height: 350px;
+    }
+
+
+    /* SERVICES */
+
+    .service-card {
+        border-right: none;
+
+        border-bottom: 1px solid #333333;
+    }
+
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .about h2 {
+        font-size: 50px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-heading h2 {
+        font-size: 45px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL CELLPHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 88%;
+    }
+
+
+    .header {
+        padding: 20px 0;
+    }
+
+
+    .logo {
+        font-size: 18px;
+    }
+
+
+    nav {
+        gap: 10px 14px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 25px 0 60px;
+    }
+
+
+    .hero-content {
+        gap: 30px;
+    }
+
+
+    .image-placeholder {
+        width: 100%;
+
+        height: 360px;
+    }
+
+
+    .hero h1 {
+        font-size: 50px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+
+    .btn,
+    .btn-outline {
+        padding: 12px 18px;
+
+        font-size: 13px;
+    }
+
+
+    .work-card .image-placeholder {
+        height: 300px;
+    }
+
+
+    .section {
+        padding: 70px 0;
+    }
+
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+
+    .about h2 {
+        font-size: 42px;
+    }
+
+
+    .contact h2 {
+        font-size: 50px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero::before,
+    .hero::after {
+        animation: none;
+    }
+
+}
